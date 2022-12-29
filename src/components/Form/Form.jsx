@@ -2,11 +2,15 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import './Form.css'
+import { useState } from 'react'
+import SignIn from '../../auth/SignIn'
+import SignUp from '../../auth/SignUp'
 
 export const Form = () => {
+  const [user,setUser]=useState(null)
   const schema = yup.object().shape({
     email: yup.string().email().required(),
-    password: yup.string().min(4).max(20).required(),
+    password: yup.string().min(6).max(20).required(),
   })
 
   const {
@@ -18,9 +22,10 @@ export const Form = () => {
   })
 
   const onSubmit = (data) => {
-    console.log(data)
+   data?setUser(data):null
+   SignUp(data.email, data.password)
   }
-
+user?console.log(user):null
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={'form'}>
       <input
