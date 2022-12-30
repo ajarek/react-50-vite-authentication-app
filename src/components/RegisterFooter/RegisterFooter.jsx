@@ -13,7 +13,7 @@ const RegisterFooter = () => {
           <a href='' className="social-wrapper"><FaGithub/></a>
         </div>
         <div className="link-register">
-        Adready a member?  <NavLink className='link' to='/login'>Login</NavLink>
+        Adready a member?  <NavLink className='link' to='/'>Login</NavLink>
         </div>
     </div>
   )
