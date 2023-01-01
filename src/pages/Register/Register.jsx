@@ -12,10 +12,12 @@ const Register = () => {
    navigate("/");
   }
   return (
+    <div className="wrapper">
     <div className='register'>
       <RegisterHeader/>
-      <Form onSubmit={onSubmit}/>
+      <Form onSubmit={onSubmit} label={'Start coding now '}/>
       <RegisterFooter/>
+    </div>
     </div>
   )
 }
