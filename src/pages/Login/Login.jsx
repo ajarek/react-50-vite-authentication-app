@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { AppContext } from '../../App'
 import MakeAuthorizedRequest from '../../auth/MakeAuthorizedRequest'
 import LoginHeader from '../../components/LoginHeader/LoginHeader'
@@ -9,8 +9,8 @@ import SignIn from '../../auth/SignIn'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const { dataJson, setDataJson } = useContext(AppContext)
-  const { email, setEmail } = useContext(AppContext)
+  const { setDataJson } = useContext(AppContext)
+  const { setEmail } = useContext(AppContext)
   const navigate = useNavigate()
   const onSubmit = async (data) => {
     await SignIn(data.email, data.password).then((data) => {
@@ -33,12 +33,15 @@ const Login = () => {
   }
 
   return (
-    <div className="wrapper">
-    <div className='login'>
-      <LoginHeader />
-      <Form onSubmit={onSubmit} label={'Login'} />
-      <LoginFooter />
-    </div>
+    <div className='wrapper'>
+      <div className='login'>
+        <LoginHeader />
+        <Form
+          onSubmit={onSubmit}
+          label={'Login'}
+        />
+        <LoginFooter />
+      </div>
     </div>
   )
 }

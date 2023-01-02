@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import './Form.css'
 
-export const Form = ({onSubmit,label}) => {
+export const Form = ({ onSubmit, label }) => {
   const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(6).max(20).required(),
@@ -18,7 +18,10 @@ export const Form = ({onSubmit,label}) => {
   })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={'form'}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={'form'}
+    >
       <input
         type='text'
         placeholder='✉️Email...'

@@ -14,7 +14,10 @@ const RegisterHeader = () => {
       <div className='content'>
         Join thousands of learners from <br /> around the world{' '}
       </div>
-      <div className="desc">Master web development by making real-life projects. There are multiple paths for you to choose</div>
+      <div className='desc'>
+        Master web development by making real-life projects. There are multiple
+        paths for you to choose
+      </div>
     </div>
   )
 }

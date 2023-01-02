@@ -11,10 +11,7 @@ const LoginHeader = () => {
         />
         <p>@jarek</p>
       </div>
-      <div className='content'>
-        Login
-      </div>
-      
+      <div className='content'>Login</div>
     </div>
   )
 }
